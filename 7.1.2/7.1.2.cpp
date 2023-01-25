@@ -22,7 +22,7 @@ void VectorSumThread(std::vector<int>& A, std::vector<int>& B, std::vector<int>&
     for (size_t i = 0; i < threadNumber; i++)
     {
 
-        VectorThread.push_back(std::thread(SumVector, std::ref(A), std::ref(B), std::ref(C), n, n));
+        VectorThread.push_back(std::thread(SumVector, std::ref(A), std::ref(B), std::ref(C), n, m));
         n = m + 1;
         if (i < static_cast<unsigned long long>(threadNumber) - 2) {
             m = m + A.size() / threadNumber;
